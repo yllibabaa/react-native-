@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import MainScreen from './screens/MainScreen';
+import SecondScreen from './screens/SecondScreen';
+import ContactScreen from './screens/ContactScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -13,6 +15,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='home' component={MainScreen}></Stack.Screen>
+        <Stack.Screen name='second' component={SecondScreen}></Stack.Screen>
+        <Stack.Screen name='contact' component={ContactScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

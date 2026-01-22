@@ -2,20 +2,15 @@ import React from "react";
 import { Text, StyleSheet, View, Button } from 'react-native';
 
 
-const MainScreen = ({ navigation }) => {
+const SecondScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>
-        This is the main Text
+        This is the Second Screen
       </Text>
       <Button
-        title="Go to Second Screen"
-        onPress={() => navigation.navigate('second')}
-      />
-      <View style={styles.buttonSpacing} />
-      <Button
-        title="Contact Us"
-        onPress={() => navigation.navigate('contact')}
+        title="Go back to Home"
+        onPress={() => navigation.goBack()}
       />
     </View>
   );
@@ -25,21 +20,14 @@ const MainScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
   textStyle: {
     fontSize: 30,
-    marginBottom: 20,
-  },
-  buttonSpacing: {
-    height: 10,
   },
 });
 
 
-export default MainScreen;
-
-
+export default SecondScreen;
