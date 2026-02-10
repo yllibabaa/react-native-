@@ -5,18 +5,20 @@ import SecondScreen from './screens/SecondScreen';
 import ContactScreen from './screens/ContactScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import MenuScreen from './screens/MenuScreen';
 
 
- const Stack = createStackNavigator();
+ const Stack = createStackNavigator();  
 
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='MenuScreen'>
         <Stack.Screen name='home' component={MainScreen}></Stack.Screen>
         <Stack.Screen name='second' component={SecondScreen}></Stack.Screen>
-        <Stack.Screen name='contact' component={ContactScreen}></Stack.Screen>
+        <Stack.Screen name='Contact' component={ContactScreen}></Stack.Screen>
+        <Stack.Screen name='MenuScreen' component={MenuScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
