@@ -1,37 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
-import MainScreen from './screens/MainScreen';
-import SecondScreen from './screens/SecondScreen';
-import ContactScreen from './screens/ContactScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import MenuScreen from './screens/MenuScreen';
+import Names from './screens/Names';
 
+const Stack =  createStackNavigator(
+  {}
+);
 
- const Stack = createStackNavigator();  
-
-
+  
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='MenuScreen'>
-        <Stack.Screen name='home' component={MainScreen}></Stack.Screen>
-        <Stack.Screen name='second' component={SecondScreen}></Stack.Screen>
-        <Stack.Screen name='Contact' component={ContactScreen}></Stack.Screen>
-        <Stack.Screen name='MenuScreen' component={MenuScreen}></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Names/>
   );
 }
 
-
 const styles = StyleSheet.create({
-  container: {
+  container: {  
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  TextStyle: {
+    color: 'blue',
+    fontSize: 40,
+  }
 });
-
-
