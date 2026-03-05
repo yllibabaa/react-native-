@@ -1,16 +1,66 @@
 
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Names from './screens/Names';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import PostsScreen from './screens/PostsScreen';
+import CommentsScreen from './screens/commentsScreen';
+import AlbumsScreen from './screens/albumsScreen';
+import PhotoScreen from './screens/photoScreen';
+import UsersScreen from './screens/usersScreen';
 
-const Stack =  createStackNavigator(
-  {}
-);
+const Tab = createBottomTabNavigator();
 
-  
 export default function App() {
   return (
-    <Names/>
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: true,
+          tabBarActiveTintColor: '#007AFF',
+        }}
+      >
+        <Tab.Screen
+          name="Posts"
+          component={PostsScreen}
+          options={{
+            title: 'Posts',
+            tabBarLabel: 'Posts',
+          }}
+        />
+        <Tab.Screen
+          name="Comments"
+          component={CommentsScreen}
+          options={{
+            title: 'Comments',
+            tabBarLabel: 'Comments',
+          }}
+        />
+        <Tab.Screen
+          name="Albums"
+          component={AlbumsScreen}
+          options={{
+            title: 'Albums',
+            tabBarLabel: 'Albums',
+          }}
+        />
+        <Tab.Screen
+          name="Photos"
+          component={PhotoScreen}
+          options={{
+            title: 'Photos',
+            tabBarLabel: 'Photos',
+          }}
+        />
+        <Tab.Screen
+          name="Users"
+          component={UsersScreen}
+          options={{
+            title: 'Users',
+            tabBarLabel: 'Users',
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
